@@ -1,5 +1,5 @@
 require 'capybara/cucumber'
-#require 'checkout'
+require './app/server'
 
 Capybara.app = Sinatra::Application
 #Sinatra::Application.set :product_list, InMemoryProductList.new
