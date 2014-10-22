@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hangman</title>
+  <link rel="stylesheet" type="text/css" href="/css/reset.css">  
+  <link rel="stylesheet" type="text/css" href="/css/application.css">
+  <link rel="stylesheet" type="text/css" href="/css/responsive.css">
+
+</head>
+<body>
+   <div class="wrapper">
+    <%= partial :header %>
+    <%= partial :flash %>
+    <div id='container'>
+      <%= yield %>
+    </div>
+    <div class="push"></div>
+  </div>  
+  <%= partial :footer %>  
+</body>
+</html>
