@@ -3,7 +3,7 @@ get '/game_level' do
   if params[:level].nil?
     erb :difficulty
   else
-    @hangman.change_level(:easy)
+    @@hangman.change_level(:easy)
     erb :game
   end
 end
