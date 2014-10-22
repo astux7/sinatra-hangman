@@ -11,6 +11,7 @@ class Hangman
 
   def change_level(level)
     @complexity = COMPLEXITY[level]
+    @lives = @complexity
   end
 
   def start

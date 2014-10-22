@@ -46,6 +46,10 @@ a {
   background-color: #b77843;
 }
 
+.button.black_wrap{
+  border: 2px solid black;
+}
+
 header {  
   height: 40px;
   background-color: black;
