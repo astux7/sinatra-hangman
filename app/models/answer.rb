@@ -2,6 +2,7 @@ class Answer
 
   def initialize
     @word = generate_answer
+    @word = "test"
   end
   
   def size

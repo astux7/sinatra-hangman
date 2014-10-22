@@ -41,4 +41,8 @@ class Hangman
     "\n Missed: "+@blanket.show_missed
   end
 
+  def lives_left
+    @blanket.lives_left
+  end
+
 end

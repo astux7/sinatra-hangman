@@ -9,9 +9,10 @@ require 'sinatra/partial'
 
 # require_relative 'controllers/users''
 require_relative 'controllers/application'
-
+require_relative 'controllers/guess'
 # use Rack::Flash
 # enable :sessions
 set :partial_template_engine, :erb
 set :public_folder, 'public'
 set :static, true
+@hangman = Hangman.new
