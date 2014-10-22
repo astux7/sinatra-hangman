@@ -9,6 +9,7 @@ require 'sinatra/partial'
 
 # require_relative 'controllers/users''
 require_relative 'controllers/application'
+require_relative 'controllers/game_level'
 require_relative 'controllers/guess'
 # use Rack::Flash
 # enable :sessions

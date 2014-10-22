@@ -24,6 +24,7 @@ Then(/^it should display the results$/) do
 end
 
 
+
 module Helper
   def last_item=(item)
     @last_item = item

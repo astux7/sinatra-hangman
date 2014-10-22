@@ -3,10 +3,14 @@ require_relative "blanket"
 class Hangman
   attr_accessor :lives, :blanket, :complexity
   COMPLEXITY = {:easy => 18, :middle => 13, :hard => 9 }
-  def initialize(style = :easy)
-    @complexity = COMPLEXITY[style]
+  def initialize(level = :easy)
+    @complexity = COMPLEXITY[level]
     @lives = @complexity
     @blanket = nil
+  end
+
+  def change_level(level)
+    @complexity = COMPLEXITY[level]
   end
 
   def start
