@@ -10,4 +10,5 @@ gem 'sinatra-partial'  #for split erb files to parts
 gem 'rack-flash3' #for showing flash messages for user
 
 gem "rspec"  #testing server side
-gem 'capybara' #testing client side
+gem 'capybara'
+gem 'cucumber' #testing client side
