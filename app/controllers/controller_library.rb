@@ -20,16 +20,12 @@ module ControllerLibrary
     hangman.show
   end
 
-  def open_blanket
-    hangman.start
-  end
-
   def send_question(guess)
     hangman.send_question(guess)
   end
 
-  def lives_left
-    #hangman.lives_left
+  def finished_game
+    hangman.stop
   end
 
 end

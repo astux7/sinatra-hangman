@@ -5,11 +5,20 @@ end
 post "/guess" do
   @message = ""
   guess = params[:guess]
-  @blanket_view = send_question(params[:guess])
-  if hangman.lives_left < 18
-    @message = "Incorrect"
-   else
-    @message = "Correct"
+  unless  guess.nil?
+    @blanket_view = send_question(params[:guess])
+
+    if hangman.game_finished? 
+      #redirect
+      finished_game
+    end
   end
+  erb :game
+end
+
+post "/guess?giveup" do
+  
+  finished_game
+  
   erb :game
 end
