@@ -2,16 +2,11 @@ require_relative "blanket"
 
 class Hangman
   attr_accessor :lives, :blanket, :complexity
-  COMPLEXITY = {:easy => 18, :middle => 13, :hard => 9 }
+  COMPLEXITY = {:easy => 18, :meddium => 13, :hard => 9 }
   def initialize(level = :easy)
     @complexity = COMPLEXITY[level]
     @lives = @complexity
     @blanket = nil
-  end
-
-  def change_level(level)
-    @complexity = COMPLEXITY[level]
-    @lives = @complexity
   end
 
   def start
@@ -45,9 +40,8 @@ class Hangman
     start
   end
 
-  def stat
-    "\n Left Lives: "+@blanket.lives_left.to_s +
-    "\n Missed: "+@blanket.show_missed
+  def missed
+    @blanket.show_missed
   end
 
   def lives_left

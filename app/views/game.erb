@@ -1,5 +1,7 @@
 <%= @message %>
 <div class="blanket"><%= blanket %></div>
+<div class="lives-left"><%= lives_stat_output %></div>
+<div class="missed-guesses"><%= missed_words %></div>
 <h1>Put answer below</h1>
 <form action="/guess" method="post">
 <p>

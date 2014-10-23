@@ -8,4 +8,12 @@ helpers do
     show_blanket
   end
 
+  def lives_stat_output
+    "Lives left: " + hangman.lives_left.to_s+ " / " + hangman.lives.to_s 
+  end
+
+  def missed_words
+    "Missed: " + hangman.missed
+  end
+
 end

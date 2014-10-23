@@ -9,10 +9,6 @@ let(:hangman) { Hangman.new}
   it 'should have easy level at begining' do
     expect(hangman.complexity).to eq(18)
   end
-  it 'should change the level to hard' do
-    hangman.change_level(:hard)
-    expect(hangman.complexity).to eq(9)
-  end
 
 end
  

@@ -1,12 +1,12 @@
 get "/guess" do
- erb :game
+  erb :game
 end
 
 post "/guess" do
   @message = ""
-  guess =  params[:guess]
+  guess = params[:guess]
   @blanket_view = send_question(params[:guess])
-  if lives_left < 18
+  if hangman.lives_left < 18
     @message = "Incorrect"
    else
     @message = "Correct"

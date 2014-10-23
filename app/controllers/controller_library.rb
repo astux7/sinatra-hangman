@@ -3,16 +3,18 @@ module ControllerLibrary
     session[:hangman]
   end
 
-  def hangman_start
-    session[:blanket] = Blanket.new(session[:game_dificulty])
-    session[:hangman] = Hangman.new
+  def difficulty
+    session[:game_dificulty]
+  end
+
+  def hangman_start(level)
+    session[:hangman] = Hangman.new(level)
     hangman.start
   end
 
   def hangman_setup(level)
     session[:game_dificulty] = level 
-  #  @hangman.change_level(level.to_sym)
-  end
+   end
 
   def show_blanket
     hangman.show
@@ -27,7 +29,7 @@ module ControllerLibrary
   end
 
   def lives_left
-    hangman.lives_left
+    #hangman.lives_left
   end
 
 end
