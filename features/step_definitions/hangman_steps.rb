@@ -1,8 +1,7 @@
 
 Given(/^a guess is submitted$/) do
   visit('/game_level?level=easy')
-  #click_link('New game!')
-   fill_in 'guess', with: 't'
+  fill_in 'guess', with: 't'
 end
 
 When(/^pressed the button$/) do
@@ -10,13 +9,12 @@ When(/^pressed the button$/) do
 end
 
 Then(/^it should return the results$/) do
- expect(page).to have_content("Correct")
+  expect(page).to have_content("Correct")
 end
 
 Given(/^an incorrect guess is submitted$/) do
-   visit('/')
-  click_link('New game!')
-   fill_in 'guess', with: 'a'
+  visit('/game_level?level=easy')
+  fill_in 'guess', with: 'a'
 end
 
 Then(/^it should display the results$/) do
