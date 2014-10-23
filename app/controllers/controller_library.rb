@@ -9,6 +9,7 @@ module ControllerLibrary
 
   def hangman_start(level)
     session[:hangman] = Hangman.new(level)
+    session[:answer_show] = nil
     hangman.start
   end
 
@@ -26,6 +27,10 @@ module ControllerLibrary
 
   def finished_game
     hangman.stop
+  end
+
+  def game_finished?
+    hangman.game_finished? 
   end
 
 end

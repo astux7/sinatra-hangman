@@ -8,17 +8,19 @@ post "/guess" do
   unless  guess.nil?
     @blanket_view = send_question(params[:guess])
 
-    if hangman.game_finished? 
+   
+  end
+  if game_finished?
       #redirect
-      finished_game
-    end
+      session[:answer_show] = finished_game
+     
+      redirect to("/game_end?finished")
   end
   erb :game
 end
 
-post "/guess?giveup" do
-  
-  finished_game
-  
-  erb :game
+get "/game_end" do
+ session[:answer_show] = finished_game
+ 
+ erb :properties
 end

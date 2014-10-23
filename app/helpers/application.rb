@@ -5,7 +5,7 @@ helpers do
   end
 
   def blanket
-    show_blanket
+    game_finished? || !session[:answer_show].nil? ? session[:answer_show] : show_blanket
   end
 
   def lives_stat_output

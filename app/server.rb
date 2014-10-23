@@ -29,4 +29,3 @@ set :partial_template_engine, :erb
 set :public_folder, 'public'
 set :static, true
 set :session_secret, "secure cookie"
-@game_dificulty = nil
