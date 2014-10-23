@@ -23,7 +23,6 @@ class Blanket
   end
 
   def lives_left
-    puts @lives-@missed.count
     @lives-@missed.count
   end
 

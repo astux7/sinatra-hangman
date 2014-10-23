@@ -15,7 +15,7 @@ class Hangman
   end
 
   def start
-    @blanket = Blanket.new(lives)
+    @blanket = Blanket.new(@lives)
     @blanket.show
   end
 
@@ -25,6 +25,10 @@ class Hangman
    
   def send_question(letter)
     @blanket.question(letter)
+    @blanket.show
+  end
+
+  def show
     @blanket.show
   end
 

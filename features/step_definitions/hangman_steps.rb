@@ -1,7 +1,7 @@
 
 Given(/^a guess is submitted$/) do
-  visit('/')
-  click_link('New game!')
+  visit('/game_level?level=easy')
+  #click_link('New game!')
    fill_in 'guess', with: 't'
 end
 

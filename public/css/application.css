@@ -192,3 +192,8 @@ footer  {
   footer, .push {
     height: 70px;
   }
+
+  .blanket{
+    font-size: 200px;
+    color: green;
+  }
