@@ -31,7 +31,7 @@ class Blanket
   end
 
   def show_missed
-    @missed.join(", ")
+    @missed
   end
 
   def make(blanket)

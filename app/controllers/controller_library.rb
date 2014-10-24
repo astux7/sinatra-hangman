@@ -33,4 +33,17 @@ module ControllerLibrary
     hangman.game_finished? 
   end
 
+  def clean_flash
+    flash[:errors] = nil
+    flash[:notice] = nil
+  end
+
+  def answer_message(guess)
+    unless hangman.missed.include?(guess)
+      flash[:notice] = "Correct answer!"
+    else
+      flash[:errors] = ["Incorrect answer!"]
+    end
+  end
+
 end

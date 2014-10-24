@@ -13,7 +13,7 @@ helpers do
   end
 
   def missed_words
-    "Missed: " + hangman.missed
+    "Missed: " + hangman.missed.join(", ")
   end
 
 end

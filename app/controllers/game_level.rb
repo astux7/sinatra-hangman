@@ -1,11 +1,9 @@
 get '/game_level' do
-  #Sinatra::Application.set :hangman, hangman, new_hangman
-  @message = ""
-  if params[:level].nil?
-    erb :difficulty
-  else
+  clean_flash
+  unless params[:level].nil?
     hangman_setup(params[:level])
     @blanket_view = hangman_start(params[:level].to_sym)
     redirect to('/guess')
   end
+  erb :difficulty
 end
