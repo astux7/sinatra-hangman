@@ -197,3 +197,8 @@ footer  {
     font-size: 200px;
     color: green;
   }
+
+  .missed-guesses, .lives-left {
+    font-size: 25px;
+    font-weight: bold;
+  }
