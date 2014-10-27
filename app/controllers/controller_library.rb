@@ -7,8 +7,8 @@ module ControllerLibrary
     session[:game_dificulty]
   end
 
-  def hangman_start(level)
-    session[:hangman] = Hangman.new(level)
+  def hangman_start(level, my_word = nil)
+    session[:hangman] = Hangman.new(level,my_word)
     session[:answer_show] = nil
     hangman.start
   end

@@ -1,5 +1,7 @@
 class Answer
 
+  attr_accessor :word
+
   def initialize
     @word = generate_answer
   end
@@ -27,8 +29,5 @@ class Answer
   def show_answer
     @word
   end
-
-  private
-  attr_reader :word
 
 end

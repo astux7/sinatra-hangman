@@ -4,12 +4,17 @@ class Blanket
   attr_reader :answer
   attr_accessor :guessed_letters, :missed, :lives, :won
 
-  def initialize(lives = 0)
+  def initialize(lives = 0, my_answer = nil)
     @answer = Answer.new
+    create_word(my_answer) unless my_answer.nil?
     @guessed_letters = []
     @missed = []
     @lives = lives
     @won = false
+  end
+
+  def create_word(word)
+    @answer.word = word
   end
 
   def size

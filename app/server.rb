@@ -20,6 +20,7 @@ include ControllerLibrary
 require_relative 'controllers/application'
 require_relative 'controllers/game_level'
 require_relative 'controllers/guess'
+require_relative 'controllers/answer'
  
 require_relative 'helpers/application'
 

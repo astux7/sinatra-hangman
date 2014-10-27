@@ -2,18 +2,19 @@ require_relative "blanket"
 
 class Hangman
 
-  attr_accessor :lives, :blanket, :complexity
+  attr_accessor :lives, :blanket, :complexity, :my_word
 
-  COMPLEXITY = {:easy => 18, :meddium => 13, :hard => 9 }
+  COMPLEXITY = {:easy => 18, :medium => 13, :hard => 9 }
   
-  def initialize(level = :easy)
+  def initialize(level = :easy, my_word = nil)
     @complexity = COMPLEXITY[level]
     @lives = @complexity
     @blanket = nil
+    @my_word = my_word
   end
 
   def start
-    @blanket = Blanket.new(@lives)
+    @blanket = Blanket.new(@lives, @my_word)
     @blanket.show
   end
 

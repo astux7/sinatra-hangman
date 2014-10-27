@@ -27,7 +27,7 @@ a {
 
 .button {
   display: inline-block; /* display inline but have dimensions */
-  width: 110px;
+  width: 150px;
   cursor: pointer;
   font-size: 16px;
   background-color: #82B743;

@@ -12,9 +12,9 @@ end
 describe "Answer" do 
 let(:answer) { FakeAnswer.new}
 
-  it 'should init with answer' do
-    expect{answer.word}.to raise_error(NoMethodError)
-  end 
+  # it 'should init with answer' do
+  #   expect{answer.word}.to raise_error(NoMethodError)
+  # end 
 
   it 'should know the size of answer' do
     expect(answer.size).to eq(3)
