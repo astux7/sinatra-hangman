@@ -1,3 +1,24 @@
 <%= @message %>
+<div class="blanket-box">
+<div class="blanket"><%= blanket %></div>
+</div>
+<div class="table">
+
+<div class="hangman-info">
 <%= partial :properties %>
+</div>
+
+<div class="hangman-word">
 <%= partial :form %>
+<div class="lives-left"><%= lives_stat_output %></div>
+</div>
+
+<div class="hangman-box">
+  <div class="hangman">
+  </div>
+</div>
+</div>
+
+<script type="text/javascript">
+  hangmanDrawer();
+</script>

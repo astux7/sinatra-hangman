@@ -86,33 +86,13 @@ header {
   }
 
 #container {
-  background-color: white;
+  //background-color: white;
+  background: url(/images/bg.jpg);
   margin: 40px;
   box-shadow: 0 0 5px rgba(0,0,0,0.4);
   padding: 10px;
+  height: 800px;
 }
-
-.link {
-  background-color: #EEE;
-  display: none;
-  box-shadow: 0 0 5px rgba(0,0,0,0.4);
-  margin: 10px inherit;
-  padding: 15px 10px;
-  position: relative;
-}
-.link .star {
-    /* absolute but relative to the first parent that's relative */
-    position: absolute;
-    font-size: 24px;
-    right: 5px;
-    top: 5px;
-    color: yellowgreen;
-    cursor: pointer;
-  }
-
-  .link .star.solid {
-    opacity: 0; /* not hidden (nonexistent), just invisible */
-  }
 
   .link a.title {
     letter-spacing: 1px;    
@@ -202,9 +182,64 @@ footer  {
   .blanket{
     font-size: 200px;
     color: green;
+    text-align: center;
+    //width: auto;
+    //border: 6px solid green;
   }
-
-  .missed-guesses, .lives-left {
+  .blanket-box{
+    width: 1000px;
+    text-align: center;
+    margin: auto;
+  }
+.lives-left {
+  font-size: 25px;
+  font-weight: bold;
+}
+  .missed-guesses{
     font-size: 25px;
     font-weight: bold;
+    color: white;
+    padding-left: 37px;
+    padding-right: 80px;
+    height: 630px;
+    vertical-align: middle;
+    display: table-cell;
+    padding-top: 100px;
+      }
+  .hangman{
+    width: 450px;
+    height: 550px;
+    /*background: url(/images/hangman_parts/13.jpg);*/
+    background-repeat: no-repeat;
+    background-position: 131px 151px;
+    background-size: 50% 50%;
+  }
+  .hangman-box{
+    background: url(/images/hangman_bg.jpg);
+    background-repeat: no-repeat;
+    width: 450px;
+    height: 550px;
+    float: left;
+    background-size: 100% 100%;
+    margin-left: 35px;
+    margin-right: 35px;
+  }
+  .hangman-info, .hangman-word{
+    width: 526px;
+    height: 526px;
+    float: left;
+    margin-left: 35px;
+    margin-right: 35px;
+  }
+  .hangman-word{
+    margin-top: 250px;
+  }
+  .hangman-bin{
+    background: url(/images/bin.png);
+    background-repeat: no-repeat;
+    width: 526px;
+    height: 526px;
+    float: left;
+    background-position: 0px 31px;
+    background-size: 95% 94%;
   }

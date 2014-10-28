@@ -9,7 +9,11 @@ post "/guess" do
   @blanket_view = send_question(guess) unless guess.nil?
   if game_finished?
     session[:answer_show] = finished_game
-    flash[:notice] = "You Won!"
+    if won?
+      flash[:notice] = "You Won!"
+    else
+      flash[:errors] = ["You Loose!"] 
+    end
     redirect to("/game_end?finished")
   end
   answer_message(guess)

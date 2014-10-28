@@ -39,6 +39,9 @@ class Hangman
     restart
   end
 
+  def won?
+    @blanket.won
+  end
   def restart
     @lives = @complexity
     start

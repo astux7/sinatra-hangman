@@ -21,6 +21,10 @@ module ControllerLibrary
     hangman.show
   end
 
+  def won?
+    hangman.won?
+  end
+
   def send_question(guess)
     hangman.send_question(guess)
   end

@@ -9,11 +9,11 @@ helpers do
   end
 
   def lives_stat_output
-    "Lives left: " + hangman.lives_left.to_s+ " / " + hangman.lives.to_s 
+    "Lives left: <span id='lives-left'>" + hangman.lives_left.to_s+ "</span> / <span id='lives'>" + hangman.lives.to_s + "</span>"
   end
 
   def missed_words
-    "Missed: " + hangman.missed.join(", ")
+    hangman.missed.join(", ")
   end
 
 end
