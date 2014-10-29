@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'rack-flash'
 require 'sinatra/partial'
+require 'sinatra/formkeeper'
 
 require_relative 'models/answer' # this needs to be done after datamapper is initialised
 require_relative 'models/blanket'

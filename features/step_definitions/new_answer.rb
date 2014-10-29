@@ -8,7 +8,7 @@ When(/^user clicks on the create answer button$/) do
 end
 
 Then(/^user should be in the create answer page$/) do
-   expect(page).to have_content("Create your answer below:")
+   expect(page).to have_content("Create your answer below")
 end
 
 Given(/^user is on the create answer page$/) do
@@ -23,7 +23,7 @@ When(/^user fills the fields with answers and clicks on the submit button$/) do
 end
 
 Then(/^user should be on the game page$/) do
-  expect(page).to have_content("Missed")
+  expect(page).to have_content("Lives left: 18 / 18")
 end
 
 Given(/^user is on the game page$/) do
@@ -36,7 +36,7 @@ end
 
 When(/^user guess the answer$/) do
   fill_in 'guess', with: 'i'
-  click_button('Submit')
+  page.find('.guess').native.send_keys(:enter) 
 end
 
 Then(/^user will see the answer$/) do
@@ -45,7 +45,7 @@ end
 
 When(/^user guess the wrong answer$/) do
   fill_in 'guess', with: 'e'
-  click_button('Submit')
+  page.find('.guess').native.send_keys(:enter) 
 end
 
 Then(/^the lives will be deducted$/) do
@@ -53,5 +53,5 @@ Then(/^the lives will be deducted$/) do
 end
 
 Then(/^the guessed alpahabet will be in the thrash area$/) do
-   expect(page).to have_content('Missed: e')
+   expect(page).to have_content('e')
 end

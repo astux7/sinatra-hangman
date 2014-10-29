@@ -12,3 +12,4 @@ gem 'rack-flash3' #for showing flash messages for user
 gem "rspec"  #testing server side
 gem 'capybara'
 gem 'cucumber' #testing client side
+gem 'sinatra-formkeeper' #for validate submitted forms

@@ -103,7 +103,7 @@ header #user-links #welcome-message {
 }
 #flash-container {
   height: 45px;
-  margin: 13px;
+  margin: 20px;
 }
 #container  h1{
   color: green;
@@ -268,22 +268,22 @@ font-weight: bold;
 }
 #container .branch-one {
   position: absolute;
-  top: 606px;
+  top: 566px;
   left: 768px;
 }
 #container .branch-two {
   position: absolute;
-  top: 463px;
+  top: 423px;
   left: 1175px;
 }
 #container .branch-three {
   position: absolute;
-  top: 529px;
+  top: 489px;
   left: 1281px;
 }
 #container .branch-four{
   position: absolute;
-  top: 400px;
+  top: 360px;
   left: 714px;
 }
 #container .roots{

@@ -46,7 +46,7 @@ module ControllerLibrary
     unless hangman.missed.include?(guess)
       flash[:notice] = "Correct answer!"
     else
-      flash[:errors] = ["Incorrect answer!"]
+      flash[:errors] = "Incorrect answer!"
     end
   end
 

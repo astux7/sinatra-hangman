@@ -5,7 +5,7 @@ Given(/^a guess is submitted$/) do
 end
 
 When(/^pressed the button$/) do
-  click_button('Submit')
+  submit_form "guess_form"
 end
 
 Then(/^it should return the results$/) do

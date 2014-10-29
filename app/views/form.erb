@@ -1,6 +1,6 @@
-<form action="/guess" method="post" onsubmit="return checkGuess();">
+<form action="/guess" method="post" id="guess-form">
   <div class="branch-four">
-    <input type="text" name="guess" placeholder="Enter letter or word" autofocus="true" class="guess">
+    <input type="text" name="guess" placeholder="Enter letter or word" autofocus="true" class="guess" autocomplete='off'>
   </div>
   <div class="branch-one">
    <a href="/game_end?giveup" class="button">Give up!</a> 
