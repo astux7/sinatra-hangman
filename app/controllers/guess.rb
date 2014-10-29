@@ -26,5 +26,5 @@ get "/game_end" do
     flash[:errors] = ["You Gave up!"] 
   end
   session[:answer_show] = finished_game
-  erb :properties
+  erb :game_over
 end

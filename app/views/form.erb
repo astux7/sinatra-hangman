@@ -1,11 +1,8 @@
-<br />
-<h1>Put guess below (letter or word):</h1>
 <form action="/guess" method="post" onsubmit="return checkGuess();">
-<p>
-<input type="text" name="guess" placeholder="Guess" autofocus="true" class="guess">
-</p>
-<p>
-<input type="submit" value="Submit" class='button'>
- <a href="/game_end?giveup" class="button">Give up!</a> 
-</p>
+  <div class="branch-four">
+    <input type="text" name="guess" placeholder="Enter letter or word" autofocus="true" class="guess">
+  </div>
+  <div class="branch-one">
+   <a href="/game_end?giveup" class="button">Give up!</a> 
+  </div>
 </form>
