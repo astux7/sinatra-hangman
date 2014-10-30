@@ -25,6 +25,7 @@ require_relative 'controllers/answer'
  
 require_relative 'helpers/application'
 
+
 use Rack::Flash
 enable :sessions
 set :partial_template_engine, :erb
