@@ -9,7 +9,7 @@ gem 'shotgun' # for live code reloading
 gem 'sinatra-partial'  #for split erb files to parts
 gem 'rack-flash3' #for showing flash messages for user
 gem 'sinatra-formkeeper' #for validate submitted forms
-
+gem 'json' # to_json needed
 group :development, :test do
   gem "rspec"  #testing server side
   gem 'capybara'

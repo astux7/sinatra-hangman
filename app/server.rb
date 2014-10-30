@@ -2,6 +2,7 @@ require 'sinatra'
 require 'rack-flash'
 require 'sinatra/partial'
 require 'sinatra/formkeeper'
+require 'json'
 
 require_relative 'models/answer' # this needs to be done after datamapper is initialised
 require_relative 'models/blanket'
@@ -17,12 +18,15 @@ end
 # require_relativegm 'controllers/users''
 require_relative 'controllers/controller_library'
 include ControllerLibrary
+#controllers api
+require_relative 'controllers/api/guess'
 
+#=====================
 require_relative 'controllers/application'
 require_relative 'controllers/game_level'
 require_relative 'controllers/guess'
 require_relative 'controllers/answer'
- 
+
 require_relative 'helpers/application'
 
 
@@ -32,3 +36,4 @@ set :partial_template_engine, :erb
 set :public_folder, 'public'
 set :static, true
 set :session_secret, "secure cookie"
+set :json_content_type, :js
