@@ -35,8 +35,8 @@ Given(/^user is on the game page$/) do
 end
 
 When(/^user guess the answer$/) do
-  fill_in 'guess', with: 'i'
-  page.find('.guess').native.send_keys(:enter) 
+  fill_in 'guess', with: "i"
+  page.execute_script("$('form#guess_form').submit()")
 end
 
 Then(/^user will see the answer$/) do
@@ -44,8 +44,8 @@ Then(/^user will see the answer$/) do
 end
 
 When(/^user guess the wrong answer$/) do
-  fill_in 'guess', with: 'e'
-  page.find('.guess').native.send_keys(:enter) 
+  fill_in 'guess', with: "e"
+  page.execute_script("$('form#guess_form').submit()")
 end
 
 Then(/^the lives will be deducted$/) do

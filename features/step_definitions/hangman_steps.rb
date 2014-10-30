@@ -5,7 +5,14 @@ Given(/^a guess is submitted$/) do
 end
 
 When(/^pressed the button$/) do
-  submit_form "guess_form"
+  #submit_form "guess_form"
+  form = page.find("guess_form")
+  class << form
+    def submit!
+      Capybara::RackTest::Form.new(driver, native).submit({})
+    end
+  end
+  form.submit!
 end
 
 Then(/^it should return the results$/) do
@@ -20,16 +27,3 @@ end
 Then(/^it should display the results$/) do
   expect(page).to have_content("Incorrect")
 end
-
-
-
-module Helper
-  def last_item=(item)
-    @last_item = item
-  end
-  def last_item
-    @last_item
-  end
-end
-
-World(Helper)

@@ -10,12 +10,12 @@ Scenario: User creates answer
 Given user is on the create answer page
 When user fills the fields with answers and clicks on the submit button
 Then user should be on the game page
-
+@javascript
 Scenario: Playing the game
 Given user is on the game page
 When user guess the answer
 Then user will see the answer
-
+@javascript
 Scenario: Guessing wrong answer
 Given user is on the game page
 When user guess the wrong answer

@@ -49,9 +49,14 @@ class Blanket
 
   def game_finished?
     return true if @won
-    return true if size == @guessed_letters.count
+    return true if update_won
     return true if lives_left < 1
     false
+  end
+
+  def update_won
+    @won = (size == @guessed_letters.count)
+    @won
   end
 
   def question(letter)

@@ -103,7 +103,8 @@ header #user-links #welcome-message {
 }
 #flash-container {
   height: 45px;
-  margin: 20px;
+  margin: 10px;
+  margin-top: 15px;
 }
 #container  h1{
   color: green;
@@ -131,7 +132,6 @@ header #user-links #welcome-message {
 
 .flash {
   text-align: center;
-  margin: 5px;
   padding: 5px;  
   border-radius: 4px;
   box-shadow: 0 0 3px rgba(0,0,0,0.4);
