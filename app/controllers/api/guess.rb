@@ -2,11 +2,17 @@
 # helpers Sinatra::JSON
 post "/api/" do
   # @blanket_view = hangman_start(params[:level].to_sym)
-  @result = request.body.read
-
   content_type :json
 
- # { text: "hello" }.to_json
+  @result = SlackResult.new(request.body.read)
+
+  if @result.user_name == 'outgoing-webhook'
+    status 200
+    body ''
+  else
+    { text: "hello" }.to_json
+  end
+
 
    # erb :result, :layout => :api_layout
   # json({:foo => 'bar'}, :encoder => :to_json, :content_type => :js)
