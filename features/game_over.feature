@@ -3,8 +3,7 @@ Feature: Game over
 Scenario: Give up in the middle of the game
 Given user has to guess the hidden answer
 When user clicks on the Give up button
-Then user should be in game over page 
-And correct answer should be shown
+Then user should be in game over page
 
 Scenario: User won the game
 Given user has to guess the hidden answer
