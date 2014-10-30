@@ -6,7 +6,7 @@ post "/api/" do
 
   content_type :json
 
-  { text: "hello" }.to_json
+ # { text: "hello" }.to_json
 
    # erb :result, :layout => :api_layout
   # json({:foo => 'bar'}, :encoder => :to_json, :content_type => :js)
