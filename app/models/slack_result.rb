@@ -1,6 +1,6 @@
-class SlackManError < StandardError; end
+class SlackResultError < StandardError; end
 
-class SlackMan
+class SlackResult
   def initialize(payload, flag = nil)
     @payload = payload
 
@@ -25,9 +25,9 @@ class SlackMan
 
   def raise_error_if_not_valid
     if !token
-      raise SlackManError, "token is required"
+      raise SlackResultError, "token is required"
     elsif !authenticated?
-      raise SlackManError, "token is invalid"
+      raise SlackResultError, "token is invalid"
     end
   end
 

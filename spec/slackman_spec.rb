@@ -1,9 +1,9 @@
 require "spec_helper"
 
-describe SlackMan do
+describe SlackResult do
   before do
     @payload = { abcd: 123, token: 456 }
-    @slackman = SlackMan.new(@payload, :skip_authentication)
+    @slackman = SlackResult.new(@payload, :skip_authentication)
   end
 
   it "allows dynamic access of payload" do
@@ -12,13 +12,13 @@ describe SlackMan do
 
   it "requires authentication" do
     expect {
-      SlackMan.new(@payload)
-    }.to raise_error(SlackManError)
+      SlackResult.new(@payload)
+    }.to raise_error(SlackResultError)
   end
 
   it "determines if message is command" do
     payload = { text: "#command" }
-    slackman = SlackMan.new(payload, :skip_authentication)
+    slackman = SlackResult.new(payload, :skip_authentication)
 
     expect(slackman.command).to eq "command"
     expect(slackman.guess).to eq false
@@ -26,7 +26,7 @@ describe SlackMan do
 
   it "determines if message is guess" do
     payload = { text: "g" }
-    slackman = SlackMan.new(payload, :skip_authentication)
+    slackman = SlackResult.new(payload, :skip_authentication)
 
     expect(slackman.guess).to eq "g"
     expect(slackman.command).to eq false
