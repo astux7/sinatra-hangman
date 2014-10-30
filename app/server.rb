@@ -7,6 +7,7 @@ require 'json'
 require_relative 'models/answer' # this needs to be done after datamapper is initialised
 require_relative 'models/blanket'
 require_relative 'models/hangman'
+require_relative 'models/slack_result'
 #Configure allows you to share things across server into the controllers
 #It's like top level app settings and config
 configure do
