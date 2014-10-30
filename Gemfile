@@ -5,6 +5,7 @@ source "https://rubygems.org"
 # gem "rails"
 ruby "2.1.3"
 gem 'sinatra' # our web framework
+gem 'sinatra-reloader'
 gem 'shotgun' # for live code reloading
 gem 'sinatra-partial'  #for split erb files to parts
 gem 'rack-flash3' #for showing flash messages for user

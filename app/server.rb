@@ -1,4 +1,5 @@
 require 'sinatra'
+require 'sinatra/reloader'
 require 'rack-flash'
 require 'sinatra/partial'
 require 'sinatra/formkeeper'
