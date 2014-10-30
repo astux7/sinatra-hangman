@@ -1,6 +1,8 @@
 require "./app/server"
 require "capybara/rspec"
 
+require "./app/models/slackman"
+
 Capybara.app = Sinatra::Application
 #Capybara.javascript_driver = :poltergeist
 Capybara.configure do |config|
