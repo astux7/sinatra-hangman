@@ -1,3 +1,5 @@
+class SlackManError < StandardError; end
+
 class SlackMan
   def initialize(payload, flag = nil)
     @payload = payload
@@ -7,7 +9,19 @@ class SlackMan
     end
   end
 
+  def command
+    command? ? text.sub("#", "") : false
+  end
+
+  def guess
+    !command? ? text : false
+  end
+
   private
+
+  def command?
+    text.include? "#"
+  end
 
   def raise_error_if_not_valid
     if !token
@@ -26,5 +40,3 @@ class SlackMan
     @payload.fetch(name.to_sym, false)
   end
 end
-
-class SlackManError < StandardError; end

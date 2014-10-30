@@ -15,4 +15,20 @@ describe SlackMan do
       SlackMan.new(@payload)
     }.to raise_error(SlackManError)
   end
+
+  it "determines if message is command" do
+    payload = { text: "#command" }
+    slackman = SlackMan.new(payload, :skip_authentication)
+
+    expect(slackman.command).to eq "command"
+    expect(slackman.guess).to eq false
+  end
+
+  it "determines if message is guess" do
+    payload = { text: "g" }
+    slackman = SlackMan.new(payload, :skip_authentication)
+
+    expect(slackman.guess).to eq "g"
+    expect(slackman.command).to eq false
+  end
 end
