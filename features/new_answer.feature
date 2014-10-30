@@ -5,11 +5,11 @@ Given user is on the homepage
 When user clicks on the create answer button
 Then user should be in the create answer page
 
-
 Scenario: User creates answer
 Given user is on the create answer page
 When user fills the fields with answers and clicks on the submit button
 Then user should be on the game page
+
 @javascript
 Scenario: Playing the game
 Given user is on the game page

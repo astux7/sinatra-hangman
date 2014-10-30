@@ -4,19 +4,14 @@ Given(/^a guess is submitted$/) do
   fill_in 'guess', with: 't'
 end
 
-When(/^pressed the button$/) do
-  #submit_form "guess_form"
-  form = page.find("guess_form")
-  class << form
-    def submit!
-      Capybara::RackTest::Form.new(driver, native).submit({})
-    end
-  end
-  form.submit!
+When(/^pressed enter$/) do
+   page.execute_script("$('form#guess_form').submit()")
 end
 
+
 Then(/^it should return the results$/) do
-  expect(page).to have_content("Correct")
+  text = page.evaluate_script("document.getElementsByClassName('flash')[0].innerHTML")
+  expect(["\n      Correct answer!\n    ","\n    Incorrect answer!\n    "].include?(text)).to be true
 end
 
 Given(/^an incorrect guess is submitted$/) do
@@ -24,6 +19,8 @@ Given(/^an incorrect guess is submitted$/) do
   fill_in 'guess', with: 'a'
 end
 
+
 Then(/^it should display the results$/) do
-  expect(page).to have_content("Incorrect")
+  text = page.evaluate_script("document.getElementsByClassName('flash')[0].innerHTML")
+  expect(["\n      Correct answer!\n    ","\n    Incorrect answer!\n    "].include?(text)).to be true
 end
