@@ -5,15 +5,16 @@ post "/api/" do
   content_type :json
 
   # todo: remove skip auth when finished testing!
-  @result = SlackResult.new(indifferent_params(params), :skip_authentication)
+  @cheker = SlackResult.new(indifferent_params(params), :skip_authentication)
 
 #  p @result.user_name
 
-  if @result.user_name == 'slackbot' # 'outgoing-webhook'
+  if @cheker.user_name == 'slackbot' # 'outgoing-webhook'
     status 200  
     body ''
   else
-    { text: "hello" }.to_json
+    @text = hangman_start("easy")+"\n"+"Lives left: 18"
+    { text: @text }.to_json
   end
 
 
