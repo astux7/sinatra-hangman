@@ -37,6 +37,6 @@ class SlackResult
   end
 
   def method_missing(name, *args, &block)
-    @params.fetch(name.to_sym, false)
+    @params.fetch(name.to_s, false)
   end
 end
