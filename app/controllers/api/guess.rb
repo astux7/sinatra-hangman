@@ -7,9 +7,9 @@ post "/api/" do
   # todo: remove skip auth when finished testing!
   @result = SlackResult.new(indifferent_params(params), :skip_authentication)
 
-  p @result.user_name
+#  p @result.user_name
 
-  if @result.user_name == 'outgoing-webhook'
+  if @result.user_name == 'slackbot' # 'outgoing-webhook'
     status 200  
     body ''
   else
