@@ -1,8 +1,8 @@
 class SlackResultError < StandardError; end
 
 class SlackResult
-  def initialize(payload, flag = nil)
-    @payload = payload
+  def initialize(params, flag = nil)
+    @params = params
 
     unless flag == :skip_authentication
       raise_error_if_not_valid
@@ -37,6 +37,6 @@ class SlackResult
   end
 
   def method_missing(name, *args, &block)
-    @payload.fetch(name.to_sym, false)
+    @params.fetch(name.to_sym, false)
   end
 end

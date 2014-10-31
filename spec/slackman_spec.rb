@@ -10,6 +10,8 @@ describe SlackResult do
     expect(@slackman.abcd).to eq 123
   end
 
+  it "requires text, username, and token"
+
   it "requires authentication" do
     expect {
       SlackResult.new(@payload)

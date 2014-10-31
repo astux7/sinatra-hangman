@@ -4,7 +4,8 @@ post "/api/" do
   # @blanket_view = hangman_start(params[:level].to_sym)
   content_type :json
 
-  @result = SlackResult.new(request.body.read)
+  # todo: remove skip auth when finished testing!
+  @result = SlackResult.new(indifferent_params(params), :skip_authentication)
 
   if @result.user_name == 'outgoing-webhook'
     status 200
