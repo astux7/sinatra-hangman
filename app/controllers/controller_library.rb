@@ -49,5 +49,8 @@ module ControllerLibrary
       flash[:errors] = "Incorrect answer!"
     end
   end
+  def lives_stat_output_api
+    "Lives left: " + hangman.lives_left.to_s+ "/" + hangman.lives.to_s 
+  end
 
 end
