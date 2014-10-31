@@ -3,7 +3,7 @@
 post "/api/" do
   # @blanket_view = hangman_start(params[:level].to_sym)
   content_type :json
-
+  @text = "" 
   # todo: remove skip auth when finished testing!
   @cheker = SlackResult.new(indifferent_params(params), :skip_authentication)
 
@@ -13,7 +13,9 @@ post "/api/" do
     status 200  
     body ''
   else
+    if @cheker.command == "start"
     @text = hangman_start("easy")+"\n"+"Lives left: 18"
+    end
     { text: @text }.to_json
   end
 
