@@ -15,7 +15,7 @@ configure do
  # @@hangman = Hangman.new
   #@@hangman.new_blanket
 end
-
+Sinatra::Application.set :hangman_game, Hangman.new("easy")
 
 # require_relativegm 'controllers/users''
 require_relative 'controllers/controller_library'

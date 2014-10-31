@@ -16,8 +16,8 @@ post "/api/" do
     if @checker.command == "start"
       @text = hangman_start("easy")+"\n"+"Lives left: 18"
     elsif @checker.guess
-      blanket = send_question(@checker.guess)
-      @text = blanket  + lives_stat_output_api
+      blanket1 = send_question(@checker.guess)
+      @text = blanket1  + lives_stat_output_api
     end
     { text: @text }.to_json
   end

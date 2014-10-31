@@ -9,12 +9,13 @@ class Hangman
   def initialize(level = :easy, my_word = nil)
     @complexity = COMPLEXITY[level]
     @lives = @complexity
-    @blanket = nil
     @my_word = my_word
+    @blanket = Blanket.new(18, @my_word)
+ 
   end
 
   def start
-    @blanket = Blanket.new(@lives, @my_word)
+  #  @blanket = Blanket.new(@lives, @my_word)
     @blanket.show
   end
 

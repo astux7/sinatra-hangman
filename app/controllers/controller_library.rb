@@ -1,6 +1,9 @@
 module ControllerLibrary
   def hangman 
-    session[:hangman]
+    # session[:hangman]
+
+     settings.hangman_game
+   
   end
 
   def difficulty
@@ -8,7 +11,11 @@ module ControllerLibrary
   end
 
   def hangman_start(level, my_word = nil)
-    session[:hangman] = Hangman.new(level,my_word)
+    
+   # $hangman_game = Hangman.new(level,my_word)
+    # Sinatra::Application.set :hangman_game, Hangman.new(level,my_word)
+
+    session[:hangman] =  settings.hangman_game #Hangman.new(level,my_word)
     session[:answer_show] = nil
     hangman.start
   end
